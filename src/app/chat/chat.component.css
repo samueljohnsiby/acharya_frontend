@@ -1,0 +1,116 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: white;
+    color: black;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.chat-title {
+    font-size: 30px; /* Increased font size */
+    font-weight: 600; /* Slightly bold for minimalism */
+    color: #333;
+    margin: 0 0 20px; /* Moved to the top left */
+    text-align: left;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.chat-history {
+    flex: 1; /* Fill available space */
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: white; /* Remove any grey tones */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Rounded shadow */
+    border-radius: 12px; /* More rounded corners */
+}
+
+.chat-message {
+    margin-bottom: 15px; /* Space between messages */
+    padding: 10px; /* Padding for message bubbles */
+    border-radius: 10px; /* Rounded corners for messages */
+}
+
+.user-message {
+    text-align: right;
+    background-color: #e0f7fa; /* Light blue for user messages */
+    color: #00796b; /* Darker text color for contrast */
+}
+
+.bot-message {
+    text-align: left;
+    background-color: #f9f9f9; /* Very light grey for bot messages */
+    color: #000000; /* Darker text color for contrast */
+}
+
+.message-content {
+    margin: 5px 0;
+}
+
+.input-container {
+    display: flex;
+    align-items: center; /* Center align input elements */
+    margin-top: 10px;
+}
+
+textarea {
+    flex: 1;
+    padding: 10px;
+    border: none; /* Removed border */
+    border-radius: 12px; /* Rounded corners */
+    resize: none;
+    font-size: 16px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Added shadow */
+}
+
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Focus effect */
+}
+
+.send-button {
+    margin-left: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 12px; /* Rounded corners */
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.send-button:hover {
+    background-color: #333;
+}
+
+.reset-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.reset-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.reset-button:hover {
+    background-color: #ff2c2c;
+}
