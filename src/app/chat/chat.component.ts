@@ -54,7 +54,7 @@ export class ChatComponent {
         };
 
         this.http.post<{ response: string, session_id: string }>(
-          'http://127.0.0.1:8000/chat',
+          'https://github.com/samueljohnsiby/acharya_backend/commit/24ec68876936cf26ab41e69742d3c6abe370594e/chat',
           payload,
           { headers }
         )
