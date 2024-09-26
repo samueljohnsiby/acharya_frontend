@@ -54,7 +54,7 @@ export class ChatComponent {
         };
 
         this.http.post<{ response: string, session_id: string }>(
-          'https://github.com/samueljohnsiby/acharya_backend/commit/24ec68876936cf26ab41e69742d3c6abe370594e/chat',
+          'https://acharya-backend-1076986361149.us-central1.run.app/chat',
           payload,
           { headers }
         )
