@@ -4,7 +4,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "dist/acharya_frontend",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
