@@ -12,6 +12,11 @@ export class ChatComponent {
   chatHistory: { user: string; bot: string }[] = [];
   sessionId: string | null = null;
 
+  
+
+  // Hardcoded API key (replace with your actual key)
+  private readonly API_KEY = 'kdjaoifKlke032__skIILlnkalle';
+
   constructor(private http: HttpClient) {
     this.initializeSession();
   }
@@ -27,6 +32,8 @@ export class ChatComponent {
     }
   }
 
+  
+
   sendMessage(event?: KeyboardEvent) {
     if (!event || event.key === "Enter") {
       if (event) event.preventDefault();
@@ -40,9 +47,16 @@ export class ChatComponent {
           session_id: this.sessionId
         };
 
+        const headers = {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'X-API-Key': this.API_KEY
+        };
+
         this.http.post<{ response: string, session_id: string }>(
           'http://127.0.0.1:8000/chat',
-          payload
+          payload,
+          { headers }
         )
         .subscribe({
           next: (data) => {
