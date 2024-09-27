@@ -54,7 +54,7 @@ export class ChatComponent {
         };
 
         this.http.post<{ response: string, session_id: string }>(
-          'http://localhost:8000/chat',
+          'https://acharya-backend-1076986361149.us-central1.run.app/chat',
           payload,
           { headers }
         )
