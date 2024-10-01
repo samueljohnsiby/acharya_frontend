@@ -1,0 +1,18 @@
+<div class="login-container">
+    <h1 class="app-name">ACHARYA</h1> <!-- App name added here -->
+    <h2>Login</h2>
+  
+    <form (submit)="login(emailInput.value, passwordInput.value); $event.preventDefault()">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input id="email" type="email" #emailInput placeholder="Enter your email" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input id="password" type="password" #passwordInput placeholder="Enter your password" required />
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>

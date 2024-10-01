@@ -1,0 +1,17 @@
+<div class="signup-container">
+    <h1 class="app-name">ACHARYA</h1>
+    <h2>Sign Up</h2>
+    <form (ngSubmit)="onSubmit()">
+        <div class="input-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" [(ngModel)]="email" name="email" required />
+        </div>
+        <div class="input-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" [(ngModel)]="password" name="password" required />
+        </div>
+        <button type="submit" class="submit-button">Sign Up</button>
+    </form>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+</div>

@@ -42,8 +42,6 @@ html, body {
     }
 }
 
-
-
 .chat-history {
     flex: 1; /* Fill available space */
     overflow-y: auto;
@@ -55,25 +53,40 @@ html, body {
 }
 
 .chat-message {
-    margin-bottom: 15px; /* Space between messages */
+    margin-bottom: 1px; /* Space between messages */
     padding: 10px; /* Padding for message bubbles */
     border-radius: 10px; /* Rounded corners for messages */
 }
 
-.user-message {
-    text-align: right;
-    background-color: #e0f7fa; /* Light blue for user messages */
-    color: #00796b; /* Darker text color for contrast */
-}
 
-.bot-message {
-    text-align: left;
-    background-color: #f9f9f9; /* Very light grey for bot messages */
-    color: #000000; /* Darker text color for contrast */
-}
 
 .message-content {
     margin: 5px 0;
+}
+
+.bot-options {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 5px;
+}
+
+.report, .g-icon {
+    cursor: pointer;
+    font-size: 10px;
+    margin-left: 10px;
+    color: #636368;
+}
+
+.report:hover {
+    text-decoration: underline;
+}
+
+.g-icon {
+    font-weight: bold;
+}
+
+.g-icon:hover {
+    color: #ff5722;
 }
 
 .input-container {
@@ -114,11 +127,6 @@ textarea:focus {
     background-color: #333;
 }
 
-.reset-container {
-    text-align: center;
-    margin-top: 10px;
-}
-
 .reset-button {
     background-color: #333;
     color: white;
@@ -133,3 +141,58 @@ textarea:focus {
 .reset-button:hover {
     background-color: #ff2c2c;
 }
+
+.vote-button {
+    color: black; /* Set the emojis to black */
+    cursor: pointer;
+    margin-left: 10px; /* Increase space between emojis */
+    font-size: 16px; /* Adjust size if needed */
+}
+
+.vote-button:hover {
+    color: #ff5722; /* Optional hover effect */
+}
+
+.bot-options {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; /* Align emojis vertically */
+}
+
+.warning {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px ;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between; /* Align items to the ends */
+    align-items: center; /* Center items vertically */
+    padding: 10px 15px; /* Adjust padding for spacing */
+}
+
+.chat-title {
+    margin: 0; /* Remove default margin */
+}
+
+.logout-button {
+    background-color: #413f3f; /* Change background color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 5px 10px; /* Padding for button */
+    cursor: pointer; /* Cursor change on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.logout-button:hover {
+    background-color: #ff5722; /* Darker red on hover */
+}
+
+
