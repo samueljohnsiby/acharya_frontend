@@ -5,6 +5,6 @@ export const environment = {
   apiKey: 'AIzaSyAa6TUEJ0gc-YFQxQEciPBxfYtl9RnHWxg',
   authDomain: 'socraticbot-4bc8c.firebaseapp.com',
   messagingSenderId: '47141419868',
-  apiUrl:'https://acharya-47141419868.us-central1.run.app',
+  apiUrl:'https://acharya-47141419868.us-central1.run.app/',
   apiPrivateKey:'kdjaoifKlke032__skIILlnkalle'
 };
