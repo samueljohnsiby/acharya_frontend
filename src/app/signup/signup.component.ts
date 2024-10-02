@@ -14,7 +14,7 @@ export class SignUpComponent {
   errorMessage: string | null = null;
   successMessage: string | null = null;
 
-  private readonly API_URL = environment.apiUrl; 
+  private readonly API_URL = `${environment.apiUrl}signup`; 
 
   constructor(private http: HttpClient, private router: Router) {} // Inject Router
 
