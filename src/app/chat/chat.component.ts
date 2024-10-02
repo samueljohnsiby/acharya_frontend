@@ -18,12 +18,13 @@ export class ChatComponent {
   chatHistory: { user: string; bot: string }[] = [];
   sessionId: string | null = null;
 
-  private readonly API_KEY = environment.apiPrivateKey;
   private authService: AuthService = inject(AuthService);  // Inject AuthService
   private router: Router = inject(Router);  // Inject Router
+  private API_KEY: string | null = null;
 
   constructor(private http: HttpClient) {
     this.initializeSession();
+    this.API_KEY = this.authService.getPrivateKey();  // Initialize API key in the constructor
   }
 
   initializeSession() {
@@ -48,15 +49,15 @@ export class ChatComponent {
         const payload = {
           prompt: message,
           session_id: this.sessionId,
-          user_id:this.authService.getUserId()
+          user_id: this.authService.getUserId() // Ensure getUserId exists in AuthService
         };
 
         const headers = {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'X-API-Key': this.API_KEY
+          'X-API-Key': this.API_KEY ?? '' // Provide a fallback for API_KEY
         };
-        console.log(payload)
+        console.log(payload);
 
         this.http.post<{ response: string, session_id: string }>(
           `${environment.apiUrl}chat`,
@@ -80,7 +81,6 @@ export class ChatComponent {
     }
   }
 
-  // Method to store thumbs rating in Firestore
   storeRating(rating: 'up' | 'down', botMessage: string) {
     const ratingData = {
       message: botMessage,
@@ -88,9 +88,8 @@ export class ChatComponent {
       timestamp: new Date(),
       session_id: this.sessionId // Reference session
     };
-    // this.firestore.collection('ratings').add(ratingData)
-    //   .then(() => console.log('Rating stored successfully'))
-    //   .catch((error) => console.error('Error storing rating:', error));
+    // Store rating in Firestore or any other storage method.
+    // Ensure the service/method exists to handle this part
   }
 
   scrollToBottom() {
@@ -108,18 +107,16 @@ export class ChatComponent {
     this.userMessage = '';
   }
 
-  // Method to copy bot message to clipboard
   copyToClipboard(botMessage: string) {
     navigator.clipboard.writeText(botMessage)
       .then(() => console.log('Message copied to clipboard!'))
       .catch((error) => console.error('Error copying message:', error));
   }
 
-  // Logout method
   logout() {
     try {
-      this.authService.setAuthenticated(false);
-      this.authService.clearPrivateKey()
+      this.authService.setAuthenticated(false); // Ensure setAuthenticated is in AuthService
+      this.authService.clearPrivateKey(); // Clear the API key
       this.resetSession(); // Clear session data
       this.router.navigate(['/login']); // Navigate to login page
       console.log('User logged out successfully');

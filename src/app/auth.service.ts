@@ -37,4 +37,7 @@ export class AuthService {
   clearPrivateKey(): void {
     localStorage.removeItem('apikey')
   }
+  getPrivateKey(): string | null {
+    return localStorage.getItem('apikey');
+  }
 }
