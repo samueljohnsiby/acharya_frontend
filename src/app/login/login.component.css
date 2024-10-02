@@ -84,3 +84,24 @@ input[type="password"]:focus {
         opacity: 1;
     }
 }
+.signup-prompt {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.signup-prompt p {
+    color: #000; /* Ensure the text is black */
+}
+
+.signup-prompt a {
+    color: #000; /* Black text for the link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Animation for hover effect */
+}
+
+.signup-prompt a:hover {
+    color: #444; /* Darker black on hover */
+    text-decoration: underline;
+}

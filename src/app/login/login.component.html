@@ -1,5 +1,5 @@
 <div class="login-container">
-    <h1 class="app-name">ACHARYA</h1> <!-- App name added here -->
+    <h1 class="app-name">ACHARYA</h1>
     <h2>Login</h2>
   
     <form (submit)="login(emailInput.value, passwordInput.value); $event.preventDefault()">
@@ -15,4 +15,10 @@
   
       <button type="submit" class="btn btn-primary">Login</button>
     </form>
-</div>
+  
+    <!-- Sign-up section -->
+    <div class="signup-prompt">
+      <p>New user? <a (click)="redirectToSignup()">Sign up</a></p>
+    </div>
+  </div>
+  
